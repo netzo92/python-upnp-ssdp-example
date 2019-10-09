@@ -26,14 +26,14 @@ def get_network_interface_ip_address():
                 pass
         if network_interface is None:
             return ""
-        interface = ni.ifaddresses(interface)
+        interface = ni.ifaddresses(network_interface)
         if (2 not in interface) or (len(interface[2]) == 0):
             return ""
         return interface[2][0]['addr']
 
 
 device_uuid = uuid.uuid4()
-local_ip_address = get_network_interface_ip_address(NETWORK_INTERFACE)
+local_ip_address = get_network_interface_ip_address()
 
 http_server = UPNPHTTPServer(8088,
                              friendly_name="NXE 400",

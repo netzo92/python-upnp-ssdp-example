@@ -18,7 +18,7 @@ class UPNPHTTPServerHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(self.get_wsd_xml().encode())
             return
-        if self.path == '/jambon-3000.xml':
+        if self.path == '/nxe-400.xml':
             self.send_response(200)
             self.send_header('Content-type', 'application/xml')
             self.end_headers()
